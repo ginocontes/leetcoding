@@ -17,8 +17,22 @@ int pivotIndex(int* nums, int numsSize) {
     return -1; 
 }
 
+int pivotIndex2(int* nums, int numsSize) {
+    int sum = 0; 
+    for(int i= 0; i<numsSize; i++) {
+        sum += nums[i]; 
+    }
+    int leftSum = 0; 
+    for(int i = 0; i<numsSize; i++) {
+        printf("it %d - Left sum -> %d | sum - leftSum = %d\n", i, leftSum, sum -leftSum); 
+        if(leftSum + nums[i] == sum - leftSum) return i; 
+        leftSum += nums[i]; 
+    }
+    return -1; 
+}
+
 int main(int argc, char** argv) {
     int nums[] = { 1,7,3,6,5,6 };
-    int res = pivotIndex(nums, sizeof(nums) / sizeof(*nums)); 
+    int res = pivotIndex2(nums, sizeof(nums) / sizeof(*nums)); 
     printf("res = %d\n", res); 
 }
