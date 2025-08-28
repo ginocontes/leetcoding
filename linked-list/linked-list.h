@@ -5,4 +5,6 @@ struct ListNode {
     int val; 
     struct ListNode* next; 
 };
+
+void printList(struct ListNode*); 
 #endif

@@ -12,16 +12,9 @@ struct ListNode* swapPairs(struct ListNode* head) {
     head->next->val = temp; 
     head->next->next = res; 
     return head; 
-
 }
 
-void printList(struct ListNode* head) {
-    while(head != NULL) {
-        printf("%d ", head->val); 
-        head = head->next; 
-    }
-    printf("\n"); 
-}
+
 int main(int argc, char** argv) {
     struct ListNode n1, n2, n3, n4, *res; 
     n1.val = 1; 
