@@ -2,9 +2,10 @@
 #include "linked-list.h"
 
 struct ListNode* reverseList(struct ListNode* head) {
-    if(head == NULL) return head; 
+    if(head == NULL || head->next == NULL) return head;
     struct ListNode* res = reverseList(head->next);
-    res->next = head; 
+    head->next->next = head; 
+    head->next = NULL;
     return res; 
 }
 
